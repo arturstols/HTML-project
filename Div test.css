@@ -1,0 +1,50 @@
+*{
+    box-sizing:border-box;
+}
+html{
+    height:100%;
+    margin:0;
+    padding:0;
+}
+body{
+    padding-top:30px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-bottom:130px;
+    overflow:hidden;
+    height:100%;
+    margin:0;
+}
+
+.logo{
+    justify-content: left;
+    width:120px;
+}
+
+.header{
+    height:100px;
+}
+
+.flexbox{
+    overflow:hidden;
+    flex-direction: row;  
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-grow:1;
+    height:100%;
+}
+
+.right{
+    min-height:100px;
+    min-width:300px;
+    height:100%;
+    width:100%;
+    background-color: orange;
+}
+
+.left{
+    height:300px;
+    width:500px;
+    max-width:500px;
+    background-color: blue;
+}

@@ -1,0 +1,36 @@
+<script>// Fetch images from a folder and place them in img tags
+const folderPath = 'path/to/folder';
+fetch(folderPath)
+  .then(response => response.json())
+  .then(data => {
+    const images = data.files.filter(file => file.endsWith('.jpg') || file.endsWith('.png'));
+    for (const image of images) {
+      const img = document.createElement('img');
+      img.src = folderPath + '/' + image;
+      document.body.appendChild(img);
+    }
+  });
+
+// Fetch text from a text file and place it in a div
+fetch('path/to/textfile.txt')
+  .then(response => response.text())
+  .then(data => {
+    const div = document.createElement('div');
+    div.innerText = data;
+    document.body.appendChild(div);
+  });
+
+// Fetch the names of subfolders in a folder and create buttons from them
+fetch(folderPath)
+  .then(response => response.json())
+  .then(data => {
+    const subfolders = data.files.filter(file => file.endsWith('/'));
+    for (const subfolder of subfolders) {
+      const button = document.createElement('button');
+      button.innerText = subfolder;
+      button.onclick = function() { /* do something when the button is clicked */ };
+      document.body.appendChild(button);
+    }
+  });
+
+</script>
